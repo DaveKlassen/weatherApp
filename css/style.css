@@ -1,0 +1,162 @@
+.theApp {
+    width: 400px;
+}
+
+#title {
+    font-size: 1.75em;
+    text-align: center;
+}
+
+#forward {
+    padding-top: 45px;
+}
+
+#citySelector {
+    float: left;
+    margin-top: 30px;
+}
+
+ul.areoplane:nth-of-type(1) li{ /* first well;*/
+    list-style-type:none;
+}
+ul.areoplane:nth-of-type(1) li:before{
+
+    /* Inverse Gold Areoplane Glyph */
+    font-family: 'Glyphicons Halflings';
+    content: "\e108"; 
+    position: absolute;
+    color: white;
+    background-color: gold;
+    left: 20px;
+
+    /* Round Out */
+    border: 2px solid gold;
+    border-radius: 100px; 
+
+    /* Point Right and Pull in */
+    filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=1);
+    -webkit-transform: rotate(90deg) scale(0.75, 0.5);
+    -moz-transform: rotate(90deg) scale(0.75, 0.5);
+    -ms-transform: rotate(90deg) scale(0.75, 0.5);
+    -o-transform: rotate(90deg) scale(0.75, 0.5);
+    transform: rotate(90deg) scale(0.75, 0.5);
+}
+
+#cityList {
+    -webkit-margin-before: 0em;
+    -webkit-margin-after: 0em;    
+}
+
+.city {
+    padding: 3px 0px 4px 0px ;
+}
+
+#weatherDetail {
+    float: right;
+    margin-top: 25px;
+    margin-left: 15px;    
+    padding: 10px;
+    width: 210px;
+
+    border-radius: 20px;
+    border: 1px solid blue;
+    color: black;
+    font-weight: 600;
+
+    background-repeat: no-repeat;
+}
+.weatherItem {
+    text-align: center;
+    padding: 10px;
+}
+/* Making space for the background graphic */
+.firstDetail {
+    padding-top: 60px;
+}
+
+/* https://stackoverflow.com/questions/3896156/how-do-i-style-radio-buttons-with-images-laughing-smiley-for-good-sad-smiley */
+.measure-selector input{
+    margin:0;padding:0;
+    position:absolute;
+    //z-index:999;    
+    -webkit-appearance:none;
+       -moz-appearance:none;
+            appearance:none;
+}
+.measure-selector input:active +.measureBy{opacity: .9;}
+.measure-selector input:checked +.measureBy{
+    //border: 1px solid blue;
+    -webkit-filter: none;
+       -moz-filter: none;
+            filter: none;    
+}
+.celcius{background-image:url(../images/celcius.png);}
+.farens{background-image:url(../images/farens.png);}
+
+.measureBy{
+    cursor:pointer;
+    background-size:contain;
+    background-repeat:no-repeat;
+    display:inline-block;
+    width:25px;
+    height:25px;
+    -webkit-transition: all 100ms ease-in;
+       -moz-transition: all 100ms ease-in;
+            transition: all 100ms ease-in;
+    -webkit-filter: brightness(1.8) grayscale(1) opacity(.7);
+       -moz-filter: brightness(1.8) grayscale(1) opacity(.7);
+            filter: brightness(1.8) grayscale(1) opacity(.7);
+}
+.measureBy:hover{
+    //border: 1px solid grey; 
+    -webkit-filter: brightness(1.2) grayscale(.5) opacity(.9);
+       -moz-filter: brightness(1.2) grayscale(.5) opacity(.9);
+            filter: brightness(1.2) grayscale(.5) opacity(.9);
+}
+
+.order-selector {
+    padding-left: 45px;
+}
+.order-selector input{
+    margin:0;padding:0;
+    position:absolute;
+    //z-index:999;    
+    -webkit-appearance:none;
+       -moz-appearance:none;
+            appearance:none;
+}
+.forward{background-image:url(../images/alpha.png);}
+.backward{background-image:url(../images/revalpha.png);}
+
+.order-selector input:active +.orderby{opacity: .9;}
+.order-selector input:checked +.orderby{
+    border: 1px solid blue; 
+    -webkit-filter: none;
+       -moz-filter: none;
+            filter: none;
+}
+.orderby{
+    cursor:pointer;
+    background-size:contain;
+    background-repeat:no-repeat;
+    display:inline-block;
+    width:25px;
+    height:25px;
+    -webkit-transition: all 100ms ease-in;
+       -moz-transition: all 100ms ease-in;
+            transition: all 100ms ease-in;
+    -webkit-filter: brightness(1.8) grayscale(1) opacity(.7);
+       -moz-filter: brightness(1.8) grayscale(1) opacity(.7);
+            filter: brightness(1.8) grayscale(1) opacity(.7);
+}
+.orderby:hover{
+    border: 1px solid grey; 
+    -webkit-filter: brightness(1.2) grayscale(.5) opacity(.9);
+       -moz-filter: brightness(1.2) grayscale(.5) opacity(.9);
+            filter: brightness(1.2) grayscale(.5) opacity(.9);
+}
+
+/* Extras */
+a:visited{color:#888}
+a{color:#444;text-decoration:none;}
+p{margin-bottom:.3em;}

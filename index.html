@@ -1,0 +1,63 @@
+<!doctype html>
+<html>
+<head>
+    <title>Travel Right</title>
+
+    <!-- CSS Mods -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+
+    <!-- User the latest angular -->
+    <script src="https://code.angularjs.org/snapshot/angular.js"></script>
+
+    <!-- User the sanitizer to allow programmaic html entity encoding -->
+    <script src="https://code.angularjs.org/snapshot/angular-sanitize.js"></script>
+    
+    <!--site-->
+    <script src="js/app.js"></script>
+    <script src="js/converterService.js"></script> 
+    
+</head>
+
+<!-- Notice here the ng-app references our 'weatherApp' module -->
+<body ng-app='weatherApp'>
+    <!-- Reference the application level controller for the title model. -->
+    <div class="theApp" ng-controller="AppCtrl" ng-model="title">
+        <h1 id="title">{{title}}</h1>
+
+        <div id="citySelector">
+            <!-- 3. Enable a sorting direction selector (graphic preferred). -->
+            <div class="order-selector">
+                <input ng-model="alphaReverse" id="forward" type="radio" name="sort" value="" ng-checked="true" />
+                <label class="orderby forward" for="forward"></label>
+                <input ng-model="alphaReverse" id="backward" type="radio" name="sort" value="reverseBeSet" />
+                <label class="orderby backward" for="backward"></label>
+            </div>
+
+            <ul id="cityList" class="areoplane">
+                <li class="city" ng-repeat="fc in forecast | orderBy:'cityName':alphaReverse" ng-click="showWeather(fc['cityName'])">{{fc['cityName']}}</label><br/>
+            </ul>
+        </div>
+
+        <!-- 1. Prevent displaying this section until the user clicks. -->
+        <div id="weatherDetail" ng-style="{background: weatherDetailStyle}" ng-show="currentCityName">
+
+            <div class="firstDetail weatherItem">{{currentCityName}}</div>
+            <div class="weatherItem">{{currentWeather.text}}</div>
+            <!-- 2. Show the weather by current City -->
+            <table>
+                <tr>
+                    <td class="weatherItem" ng-bind-html="currentHigh"></td>
+                    <td class="weatherItem"ng-bind-html="currentLow"></td>
+                </tr>              
+            </table>
+            <div class="weatherItem measure-selector">
+                <input type=radio id="celcius" name="measurement" value="C" ng-click="clickFarens(false)"></input>                                       
+                <label class="measureBy celcius" for="celcius"></label>
+                <input type=radio id="farens" name="measurement" value="F" ng-click="clickFarens(true)" checked="true"></input>
+                <label class="measureBy farens" for="farens"></label>
+            </div>            
+        </div>
+    </div>
+</body>
+</html>
