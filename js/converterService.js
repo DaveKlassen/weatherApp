@@ -33,7 +33,6 @@ weatherApp.factory("weatherService", function () {
             return  graphicName;
         },        
         getAllWeather: function() {
-            console.log("I am here");
             return  weather;
         }
     }
