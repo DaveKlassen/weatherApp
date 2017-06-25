@@ -3,4 +3,4 @@ A very simple Angular weather application.
 
 I have hosted the App hosted here:
 
-  [www.multiversial.ca/angular1/](https://www.multiversial.ca/angular1/)
+  [www.multiversial.ca/angular1/weatherApp/](https://www.multiversial.ca/angular1/weatherApp/)
