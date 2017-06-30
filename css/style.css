@@ -19,6 +19,7 @@
 ul.areoplane:nth-of-type(1) li{ /* first well;*/
     list-style-type:none;
 }
+/* https://stackoverflow.com/questions/5777210/how-to-write-hover-condition-for-abefore-and-aafter */
 ul.areoplane:nth-of-type(1) li:hover::before {
 	border-color: rgb(0, 223, 255);
 	background-color: rgb(0, 223, 255);
